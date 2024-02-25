@@ -8,6 +8,8 @@
 
 AIML Natural Language Processing - Speech, Audio
 
+<img src="documentation/demo.gif"/>
+
 <div align="center">
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)](CODE_OF_CONDUCT.md) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Checkout+this+recipe+for+NLP&url=https://github.com/AnanthaRajuC/AIML_NLP&hashtags=NLP) [![Twitter Follow](https://img.shields.io/twitter/follow/anantharajuc?label=follow%20me&style=social)](https://twitter.com/anantharajuc)
