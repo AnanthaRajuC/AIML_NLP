@@ -1,0 +1,60 @@
+{
+    "resultTranscription": {
+      "text": " इसके बाद हम एक ऐसे खिलाड़ी के बारे में बात करेंगे जिससे इस वर्ल्ड कप में भारतिय फैंस को काफी उमीदे रहेंगे इस खिलाड़ी के बारे में मैं आपको बस इतना बता दूं कि ये वो खिलाड़ी हैं जिसने इंटरनेशनल क्रिकेट में अपनी एंट्री का एलान औस्ट्रेलिया के गेंज जोरदार प्रदर्शन से किया आज से वर्ल्ड कप के दारान हर रोज हम आपको मिलते रहेंगे EAM Cricket World Cup 2007 अपडेट में",
+      "chunks": [
+        {
+          "timestamp": [
+            0.0,
+            5.42
+          ],
+          "text": " इसके बाद हम एक ऐसे खिलाड़ी के बारे में बात करेंगे जिससे इस वर्ल्ड कप में भारतिय फैंस को काफी उमीदे रहेंगे"
+        },
+        {
+          "timestamp": [
+            5.42,
+            13.46
+          ],
+          "text": " इस खिलाड़ी के बारे में मैं आपको बस इतना बता दूं कि ये वो खिलाड़ी हैं जिसने इंटरनेशनल क्रिकेट में अपनी एंट्री का एलान औस्ट्रेलिया के गेंज जोरदार प्रदर्शन से किया"
+        },
+        {
+          "timestamp": [
+            13.62,
+            19.52
+          ],
+          "text": " आज से वर्ल्ड कप के दारान हर रोज हम आपको मिलते रहेंगे EAM Cricket World Cup 2007 अपडेट में"
+        }
+      ]
+    },
+    "resultTranslation": {
+      "text": " Now we will talk about a player who will be a big fan of Indian fans in this World Cup. I will tell you that he is a player who has made his entry in international cricket with a strong Australian against. From today during the World Cup, we will meet you every day in EAM Cricket World Cup 2007 Update.",
+      "chunks": [
+        {
+          "timestamp": [
+            0.0,
+            5.6
+          ],
+          "text": " Now we will talk about a player who will be a big fan of Indian fans in this World Cup."
+        },
+        {
+          "timestamp": [
+            5.6,
+            13.6
+          ],
+          "text": " I will tell you that he is a player who has made his entry in international cricket with a strong Australian against."
+        },
+        {
+          "timestamp": [
+            13.6,
+            19.64
+          ],
+          "text": " From today during the World Cup, we will meet you every day in EAM Cricket World Cup 2007 Update."
+        }
+      ]
+    },
+    "resultClassifier": [
+      {
+        "label": "POSITIVE",
+        "score": 0.999645471572876
+      }
+    ]
+  }

@@ -1,7 +1,6 @@
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-from datasets import load_dataset
-import speech_recognition as sr
+
 import numpy as np
 import sys
 import json
@@ -9,23 +8,46 @@ import json
 # Access command-line arguments
 arguments = sys.argv[1:]
 
-# Print the arguments passed from Java
-for arg in arguments:
-    print("Argument:", arg)
+# Create an empty dictionary to store key-value pairs
+args_dict = {}
 
-# device = "cuda:0" if torch.cuda.is_available() else "cpu"
-device = "cpu"
+# Parse arguments with keys
+for arg in arguments:
+    key, value = arg.split('=')  # Split the argument at '=' to separate key and value
+    args_dict[key] = value
+
+# Define the key of interest
+audio_file_path = 'audio_file_path'
+
+# Check if the desired key exists in the dictionary
+if audio_file_path in args_dict:
+    audio_file_path_value = args_dict[audio_file_path]
+    print(f"Value for key '{audio_file_path}': {audio_file_path_value}")
+else:
+    print(f"Key '{audio_file_path}' not found in the arguments.")
+
+# Check device availability
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
+
+# Determine the torch data type based on device availability
 torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
+# Define the model ID - https://huggingface.co/openai/whisper-large-v3
 model_id = "openai/whisper-large-v3"
 
+# Load the speech-to-text model
 model = AutoModelForSpeechSeq2Seq.from_pretrained(
-    model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True
+    model_id, 
+    torch_dtype=torch_dtype, 
+    low_cpu_mem_usage=True, 
+    use_safetensors=True
 )
 model.to(device)
 
+# Load the processor
 processor = AutoProcessor.from_pretrained(model_id)
 
+# Create a pipeline for automatic speech recognition
 pipe = pipeline(
     "automatic-speech-recognition",
     model=model,
@@ -39,21 +61,22 @@ pipe = pipeline(
     device=device,
 )
 
+# Perform automatic speech recognition
+resultTranscription = pipe(audio_file_path_value, generate_kwargs={"language": None})
+print("\n",resultTranscription["text"])
 
-resultTranscription = pipe("/home/anantha/PCF/AIML/SpeechToText/HIN_M_AbhishekS.mp3", generate_kwargs={"language": None})
-print("")
-print(resultTranscription["text"])
+# Perform translation
+resultTranslation = pipe(audio_file_path_value, generate_kwargs={"task": "translate"})
+print("\n",resultTranslation["text"])
 
+# Load the sentiment analysis classifier
+classifier = pipeline("sentiment-analysis",
+                      model="distilbert/distilbert-base-uncased-finetuned-sst-2-english",
+                      revision ="af0f99b")
 
-resultTranslation = pipe("/home/anantha/PCF/AIML/SpeechToText/HIN_M_AbhishekS.mp3", generate_kwargs={"task": "translate"})
-print("")
-print(resultTranslation["text"])
-
-
-classifier = pipeline("sentiment-analysis",model="distilbert/distilbert-base-uncased-finetuned-sst-2-english",revision ="af0f99b")
+# Perform sentiment analysis on the translated text
 resultClassifier = classifier(resultTranslation["text"])
-print("")
-print(resultClassifier)
+print("\n",resultClassifier)
 
 # Create a Python dictionary
 data = {
@@ -66,4 +89,4 @@ data = {
 json_string = json.dumps(data)
 
 # Print the JSON string
-print(json_string)
+print("\n",json_string)
