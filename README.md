@@ -6,7 +6,32 @@
 -->
 # AIML NLP
 
-AIML Natural Language Processing - Speech, Audio
+AIML Natural Language Processing 
+
+NLP Speech to Text , Text Translation and Sentiment Analysis! 🗣️🎙️🔤 😊
+
+This weekend project marks my initial foray into the dynamic realm of AI and Machine Learning, where I've utilised preexisting components to swiftly create something for educational purposes.
+
+🎧 **Example Use Case**: By leveraging a 20-second audio clip in Hindi, I transcribed, translated it into English, and conducted sentiment analysis on the resulting text. This demonstration showcases the remarkable versatility, intuitive design, user-friendly nature, practicality and real-world utility of pre-trained models (openai/whisper-large-v3) and libraries (Transformers).
+
+🔍 **Key Features**:
+
+1. **Speech to Text Conversion**: Transcribe spoken words into text.
+2. **Text Translation**: Translate text from one language to another.
+3. **Sentiment Analysis**: Gain insights into the emotional tone of the text, enhancing understanding and interpretation.
+4. **API Invocation**: The NLP service can be invoked via API calls, enabling integration into various applications and systems with the accompanying Java project.
+
+🛠️ **Technologies & Libraries Utilised**:
+
+1. Python
+2. Transformers Library by [Hugging Face](https://huggingface.co/)
+3. [OpenAI's Whisper-Large-v3](https://huggingface.co/openai/whisper-large-v3) model (a pre-trained model for automatic speech recognition (ASR))
+
+🔌 **No External Dependencies**: Notably, this project operates entirely offline, ensuring data privacy and accessibility even without internet connectivity.
+
+💡 **Insights**: Leveraging pre-trained models like Whisper has accelerated development, highlighting the immense value of open-source resources in driving innovation.
+
+🌱 **Simplicity & Collaboration**: With just a few lines of code, this project underscores the power of simplicity in achieving complex tasks. It's a testament to the collaborative spirit of the open-source ecosystem, without which this endeavour wouldn't have been possible.
 
 <img src="documentation/demo.gif"/>
 
