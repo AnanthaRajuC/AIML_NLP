@@ -16,7 +16,9 @@ import java.nio.file.Paths;
 @RestController
 public class NLPController {
 
+    // Update these variables
     private String uploadPath = "/home/anantha/ARC/AIML_NLP/audio_files/";
+    private String pythonFilePath = "/home/anantha/ARC/AIML_NLP/codePython/nlp1.py";
 
     @PostMapping("/upload")
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
@@ -45,7 +47,7 @@ public class NLPController {
             try {
                 System.out.println("calling python script");
                 // Command to execute the Python script
-                String[] command = {"python", "/home/anantha/ARC/AIML_NLP/codePython/nlp1.py", "audio_file_path="+uploadPath+file.getOriginalFilename()};
+                String[] command = {"python", pythonFilePath, "audio_file_path="+uploadPath+file.getOriginalFilename()};
 
                 // Create ProcessBuilder instance
                 ProcessBuilder processBuilder = new ProcessBuilder(command);
@@ -77,7 +79,7 @@ public class NLPController {
             return returnStringinJson;
         } catch (IOException e) {
             e.printStackTrace();
-            return "Failed to upload file";
+            return "Failed to process file.";
         }
     }
 }

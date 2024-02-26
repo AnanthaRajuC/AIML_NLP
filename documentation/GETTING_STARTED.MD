@@ -67,7 +67,7 @@ Replace **/path/to/AUDIO_FILE.mp3** with the path to your audio file. A sample a
 
 --- 
 
-#### 4. Output
+#### 5. Output
 
 ~~~json
 {
@@ -134,3 +134,11 @@ Replace **/path/to/AUDIO_FILE.mp3** with the path to your audio file. A sample a
 
 ---  
 
+#### 6. API CALL
+
+A java project for invoking the python script via an API call is available.
+
+~~~shell
+curl --location --request POST 'http://localhost:8080/upload' \
+--form 'file=@"/home/anantha/ARC/AIML_NLP/codePython/HIN_M_AbhishekS.mp3"'
+~~~
