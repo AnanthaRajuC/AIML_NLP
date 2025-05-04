@@ -29,15 +29,28 @@ pip3 show torch
 
 If you haven't installed the required dependencies, use the following commands to install them:
 
+Hugging Face’s transformers library for using pretrained NLP and vision models.
 ~~~shell
 pip install transformers  
+~~~
 
+PyTorch, a popular deep learning framework.
+~~~shell
 pip install torch  
+~~~
 
+Hugging Face's accelerate library, which helps manage hardware (CPU/GPU) for training and inference.
+~~~shell
 pip install accelerate  
+~~~
 
+A Python package for analyzing and processing audio signals.
+~~~shell
 pip install librosa  
+~~~
 
+A command-line tool for converting and processing multimedia files (required by librosa for audio file handling).
+~~~shell
 sudo apt install ffmpeg
 ~~~
 
